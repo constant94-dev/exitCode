@@ -23,7 +23,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="215.5dp"
+            android:layout_height="210dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/main_body_selector"
             android:orientation="vertical">
