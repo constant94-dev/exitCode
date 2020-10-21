@@ -20,7 +20,7 @@
             android:layout_marginTop="20dp"
             android:src="@drawable/main_logo" />
 
-
+<!--//fdffefe-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="210dp"
