@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context=".activity.MainActivity">
 
-   <!-- 다른방벙ㄹ벌안ㅇㄹ미나러ㅣㄹㅇㅇㅁㄴ -->
+   <!-- 다른방 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
