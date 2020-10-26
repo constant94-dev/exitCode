@@ -68,7 +68,7 @@ public class DetailBenefitActivity extends AppCompatActivity {
 		detail_title = findViewById(R.id.detail_title);
 		detail_target = findViewById(R.id.detail_target);
 		detail_contents = findViewById(R.id.detail_contents);
-		detail_contact = findViewById(R.id.detail_contact);
+
 		detail_period = findViewById(R.id.detail_period);
 		detail_logo = findViewById(R.id.detail_logo);
 		detail_benefit_recyclerview = (RecyclerView) findViewById(R.id.detail_benefit_btn_recyclerview);
