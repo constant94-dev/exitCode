@@ -20,7 +20,7 @@
             android:layout_marginTop="20dp"
             android:src="@drawable/main_logo" />
 
-<!--//fdffefe-->
+        <!-- 테스트 주석 githubClone/exitCode -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="210dp"
@@ -154,7 +154,8 @@
                         android:layout_width="65.8dp"
                         android:layout_height="65.8dp"
                         android:layout_marginLeft="26.5dp"
-                        android:layout_marginTop="26.5dp"                        android:background="@drawable/detail_benefit_gray_circle">
+                        android:layout_marginTop="26.5dp"
+                        android:background="@drawable/detail_benefit_gray_circle">
 
                         <ImageView
                             android:layout_width="21dp"
