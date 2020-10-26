@@ -626,7 +626,7 @@ public class ResultBenefitActivity extends AppCompatActivity {
 		RBF_back.setOnClickListener(new OnSingleClickListener() {
 			@Override
 			public void onSingleClick(View v) {
-				Intent RBF_intent = new Intent(ResultBenefitActivity.this, MainActivity.class);
+				Intent RBF_intent = new Intent(ResultBenefitActivity.this, MainTabLayoutActivity.class);
 				startActivity(RBF_intent);
 				finish();
 			}

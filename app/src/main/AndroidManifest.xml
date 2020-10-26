@@ -19,11 +19,14 @@
 
         <activity android:name=".activity.MYLoginActivity"></activity>
         <activity android:name=".activity.ProfileActivity"></activity>
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".activity.MainTabLayoutActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".activity.MainActivity">
+
         </activity>
         <activity android:name=".activity.FirstCategory"></activity>
         <activity android:name=".activity.SecondCategory"></activity>
