@@ -24,6 +24,7 @@ import java.util.ArrayList;
  * */
 public class MainActivity extends AppCompatActivity {
 
+	// merge
 	public static final String TAG = "MainTestActivity";
 
 	Button main_done;
