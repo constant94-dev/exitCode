@@ -24,7 +24,7 @@ import java.util.ArrayList;
  * */
 public class MainActivity extends AppCompatActivity {
 
-	// fork change
+	// fork change sang jun
 	public static final String TAG = "MainTestActivity";
 
 	Button main_done;
