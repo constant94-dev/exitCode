@@ -46,22 +46,42 @@ public class MainTabLayoutActivity extends AppCompatActivity {
 			@Override
 			public void onTabSelected(TabLayout.Tab tab) {
 				Log.e(TAG, "onTabSelected() 호출");
+
 				int position = tab.getPosition();
-//                Log.e(TAG, String.valueOf(position)); // 포지션 확인 위한 로그
+				Log.e(TAG, "onTabSelected() position -> " + position); // 탭 포지션 확인 로그
+
 				if (position == 0) {
-					tab.setIcon(R.drawable.alarm_icon_gray);
+					tab.setIcon(R.drawable.home_icon_focus);
+				} else if (position == 1) {
+					tab.setIcon(R.drawable.news_icon_focus);
+				} else if (position == 2) {
+					tab.setIcon(R.drawable.alarm_icon_focus);
+				} else if (position == 3) {
+					tab.setIcon(R.drawable.search_icon_focus);
+				} else if (position == 4) {
+					tab.setIcon(R.drawable.my_profile_icon_focus);
 				}
-			}
+			} // onTabSelected end
 
 			@Override
 			public void onTabUnselected(TabLayout.Tab tab) {
 				Log.e(TAG, "onTabUnselected() 호출");
+
 				int position = tab.getPosition();
-//                Log.e(TAG, String.valueOf(position));
+				Log.e(TAG, "onTabUnselected() position -> " + position); // 탭 포지션 확인 로그
+
 				if (position == 0) {
+					tab.setIcon(R.drawable.home_icon_gray);
+				} else if (position == 1) {
+					tab.setIcon(R.drawable.second_icon_gray);
+				} else if (position == 2) {
 					tab.setIcon(R.drawable.alarm_icon_gray);
+				} else if (position == 3) {
+					tab.setIcon(R.drawable.search_icon_gray);
+				} else if (position == 4) {
+					tab.setIcon(R.drawable.my_profile_icon_gray);
 				}
-			}
+			} // onTabUnselected end
 
 			@Override
 			public void onTabReselected(TabLayout.Tab tab) {
@@ -71,7 +91,7 @@ public class MainTabLayoutActivity extends AppCompatActivity {
 
 		// 탭에 이미지 추가
 		ArrayList<Integer> image = new ArrayList<>();
-		image.add(R.drawable.home_icon_gray);
+		image.add(R.drawable.home_icon_focus);
 		image.add(R.drawable.second_icon_gray);
 		image.add(R.drawable.alarm_icon_gray);
 		image.add(R.drawable.search_icon_gray);
