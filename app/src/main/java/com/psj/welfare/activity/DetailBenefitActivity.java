@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +22,7 @@ import com.psj.welfare.adapter.DetailBenefitRecyclerAdapter;
 import com.psj.welfare.api.ApiService;
 import com.psj.welfare.api.RetroClient;
 import com.psj.welfare.custom.OnSingleClickListener;
+import com.psj.welfare.fragment.MainFragment;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -44,11 +46,12 @@ public class DetailBenefitActivity extends AppCompatActivity {
 	private String detail_data; // 상세 페이지 타이틀
 
 	// 대상, 내용, 기간 텍스트 View
-	private TextView detail_title, detail_contact, detail_period;
+	private TextView detail_contents, detail_title, detail_contact, detail_target;
 	// 타이틀과 연관된 이미지 View
-	private ImageView detail_img, detail_logo;
-	// 장문(글)을 표현하기 위한 텍스트 View
-	private TextView detail_target, detail_contents;
+	private ImageView detail_logo;
+
+	LinearLayout apply_view, content_view;
+	View apply_bottom_view, content_bottom_view;
 
 	// 연관된 혜택 밑의 가로로 버튼들을 넣을 리사이클러뷰
 	// TODO : 어댑터 만들어야 함. 모델 클래스 이상하면 수정하기
@@ -64,13 +67,18 @@ public class DetailBenefitActivity extends AppCompatActivity {
 
 		Log.e(TAG, "onCreate 실행");
 
+		detail_logo = findViewById(R.id.detail_logo);
 
 		detail_title = findViewById(R.id.detail_title);
 		detail_target = findViewById(R.id.detail_target);
 		detail_contents = findViewById(R.id.detail_contents);
+		detail_contact = findViewById(R.id.detail_contact);
 
-		detail_period = findViewById(R.id.detail_period);
-		detail_logo = findViewById(R.id.detail_logo);
+		apply_view = findViewById(R.id.apply_view);
+		content_view = findViewById(R.id.content_view);
+		apply_bottom_view = findViewById(R.id.apply_bottom_view);
+		content_bottom_view = findViewById(R.id.content_bottom_view);
+
 		detail_benefit_recyclerview = (RecyclerView) findViewById(R.id.detail_benefit_btn_recyclerview);
 
 		if (getIntent().hasExtra("RBF_title")) {
@@ -142,19 +150,28 @@ public class DetailBenefitActivity extends AppCompatActivity {
 		super.onResume();
 		Log.e(TAG, "onResume 실행");
 
-		detail_target.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Log.e(TAG, "클릭됨!");
-			}
-		});
-
 		detail_logo.setOnClickListener(new OnSingleClickListener() {
 			@Override
 			public void onSingleClick(View v) {
-				Intent d_intent = new Intent(DetailBenefitActivity.this, MainActivity.class);
+				Intent d_intent = new Intent(DetailBenefitActivity.this, MainTabLayoutActivity.class);
 				startActivity(d_intent);
 				finish();
+			}
+		});
+
+		content_view.setOnClickListener(new OnSingleClickListener() {
+			@Override
+			public void onSingleClick(View v) {
+				content_bottom_view.setVisibility(View.VISIBLE);
+				apply_bottom_view.setVisibility(View.GONE);
+			}
+		});
+
+		apply_view.setOnClickListener(new OnSingleClickListener() {
+			@Override
+			public void onSingleClick(View v) {
+				apply_bottom_view.setVisibility(View.VISIBLE);
+				content_bottom_view.setVisibility(View.GONE);
 			}
 		});
 
@@ -184,6 +201,9 @@ public class DetailBenefitActivity extends AppCompatActivity {
 			period = jsonObject_detail.getString("welf_period");
 			contact = jsonObject_detail.getString("welf_contact");
 
+			detail_title.setText(name);
+
+			symbolChange(target, contents, contact);
 
 		} catch (JSONException e) {
 			e.printStackTrace();
@@ -203,34 +223,29 @@ public class DetailBenefitActivity extends AppCompatActivity {
 		contents.setTrimLength(20);
 		contents.setColorClickableText(ContextCompat.getColor(this, R.color.colorMainBlue));
 
-
 	}
 
-	//
-//	public void readMoreText(){
-//		Pattern line_pattern = Pattern.compile("^;");
-//		Pattern comma_pattern = Pattern.compile(";;");
-//
-//		String target_line = target.replace("^;", "\n");
-//		String target_comma = target_line.replace(";;", ",");
-//		Log.e(TAG, "특수기호 변환 후 : " + target_comma);
-//
-//		String contents_line = contents.replace("^;", "\n");
-//		String contents_comma = contents_line.replace(";;", ",");
-//		Log.e(TAG, "특수기호 변환 후 : " + contents_comma);
-//
-//		String contact_line = contact.replace("^;", "\n");
-//		String contact_comma = contact_line.replace(";;", ",");
-//		Log.e(TAG, "특수기호 변환 후 : " + contact_comma);
-//
-//		detail_title.setText(name);
-//		detail_target.setText(target_comma);
-//		detail_contents.setText(contents_comma);
-//		detail_period.setText(period);
-//		detail_contact.setText(contact_comma);
-//
-//		setReadMoreText(detail_target, detail_contents);
-//	}
+	// 특수기호 변환 기능
+	public void symbolChange(String target, String contents, String contact) {
+		Pattern line_pattern = Pattern.compile("^;");
+		Pattern comma_pattern = Pattern.compile(";;");
+
+		String target_line = target.replace("^;", "\n");
+		String target_comma = target_line.replace(";;", ",");
+		Log.e(TAG, "특수기호 변환 후 : " + target_comma);
+
+		String contents_line = contents.replace("^;", "\n");
+		String contents_comma = contents_line.replace(";;", ",");
+		Log.e(TAG, "특수기호 변환 후 : " + contents_comma);
+
+		String contact_line = contact.replace("^;", "\n");
+		String contact_comma = contact_line.replace(";;", ",");
+		Log.e(TAG, "특수기호 변환 후 : " + contact_comma);
+
+		detail_target.setText(target_comma);
+		detail_contents.setText(contents_comma);
+		detail_contact.setText(contact_comma);
+	}
 
 
 } // DetailBenefitActivity class end
