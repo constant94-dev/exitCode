@@ -36,6 +36,8 @@ public class MainTabLayoutActivity extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_maintablayout);
 
+		Log.e(TAG, "onCreate() 실행");
+
 		viewPager = findViewById(R.id.main_viewpager);
 		MainViewPagerAdapter adapter = new MainViewPagerAdapter(getSupportFragmentManager());
 		viewPager.setAdapter(adapter);
@@ -102,5 +104,40 @@ public class MainTabLayoutActivity extends AppCompatActivity {
 		}
 
 	} // onCreate end
+
+	@Override
+	protected void onStart()
+	{
+		super.onStart();
+		Log.e(TAG, "onStart() 실행");
+	}
+
+	@Override
+	protected void onResume()
+	{
+		super.onResume();
+		Log.e(TAG, "onResume() 실행");
+	}
+
+	@Override
+	protected void onRestart()
+	{
+		super.onRestart();
+		Log.e(TAG, "onRestart() 실행");
+	}
+
+	@Override
+	protected void onPause()
+	{
+		super.onPause();
+		Log.e(TAG, "onPause() 실행");
+	}
+
+	@Override
+	protected void onDestroy()
+	{
+		super.onDestroy();
+		Log.e(TAG, "onDestroy() 실행");
+	}
 
 } // MainTabLayoutActivity class end
