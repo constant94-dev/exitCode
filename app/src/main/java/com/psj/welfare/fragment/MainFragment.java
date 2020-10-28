@@ -137,13 +137,6 @@ public class MainFragment extends Fragment {
 				m_intent.putStringArrayListExtra("favor_btn", m_favorList);
 				startActivity(m_intent);
 			}
-//			m_favorList.add(0, "전체");
-//			for (int i = 0; i < m_favorList.size(); i++) {
-//				Log.e(TAG, "m_favorList : " + m_favorList);
-//			}
-//			Intent m_intent = new Intent(getActivity(), ResultBenefitActivity.class);
-//			m_intent.putStringArrayListExtra("favor_btn", m_favorList);
-//			startActivity(m_intent);
 		});
 
 		/* 아기·어린이 혜택 버튼 */
