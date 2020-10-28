@@ -41,6 +41,7 @@ import retrofit2.Response;
  * */
 public class DetailBenefitActivity extends AppCompatActivity {
 
+	// sdfasdfasdfsdfㅁㄴㅇㄻㅇㄴㄹ
 	public static final String TAG = "DetailBenefitActivity"; // 로그 찍을 때 사용하는 TAG
 
 	private String detail_data; // 상세 페이지 타이틀
