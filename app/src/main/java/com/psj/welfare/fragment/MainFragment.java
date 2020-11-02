@@ -3,6 +3,9 @@ package com.psj.welfare.fragment;
 import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,6 +15,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,6 +35,8 @@ import com.psj.welfare.adapter.MainTextVPAdapter;
 import com.psj.welfare.custom.CustomResultBenefitDialog;
 import com.psj.welfare.custom.OnSingleClickListener;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Timer;
 
@@ -375,7 +381,7 @@ public class MainFragment extends Fragment {
 			public void onSingleClick(View v) {
 				Log.i(TAG, "혜택 조회하러 가기 클릭!");
 
-				// 스크롤 0.5초만에 Y축 2100 이동
+				// 스크롤 0.5초만에 Y축 main_content 머리로 이동
 				main_ScrollView.post(new Runnable() {
 					@Override
 					public void run() {
