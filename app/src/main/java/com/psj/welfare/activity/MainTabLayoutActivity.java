@@ -14,6 +14,8 @@ import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
+import com.kakao.usermgmt.UserManagement;
+import com.kakao.usermgmt.callback.LogoutResponseCallback;
 import com.psj.welfare.R;
 import com.psj.welfare.adapter.MainViewPagerAdapter;
 import com.psj.welfare.custom.OnSingleClickListener;
@@ -31,10 +33,14 @@ public class MainTabLayoutActivity extends AppCompatActivity {
 	// 프래그먼트 별 화면을 표시할 뷰페이저
 	ViewPager viewPager;
 
+	LogoutResponseCallback logoutCallbak;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_maintablayout);
+
+//		UserManagement.getInstance().requestLogout(logoutCallbak);
 
 		Log.e(TAG, "onCreate() 실행");
 
