@@ -1,9 +1,14 @@
 package com.psj.welfare.activity;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.os.Bundle;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -37,9 +42,14 @@ import com.psj.welfare.api.RetroClient;
 import com.psj.welfare.custom.CustomLoginButton;
 import com.psj.welfare.custom.OnSingleClickListener;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import static com.kakao.util.helper.Utility.getPackageInfo;
 
 /*
  * 로그인 액티비티는 SNS 로그인(구글, 네이버)과 너의 혜택은 자체 로그인이 있다
@@ -174,6 +184,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         // LoginActivity context 저장
         loginContext = LoginActivity.this;
+
+        String keyhash = com.kakao.util.helper.Utility.getKeyHash(this);
+        Log.e(TAG, "keyhash = " + keyhash);
 
         // 카카오 로그인 시작. onClick(View v) 참고
         fake_kakao.setOnClickListener(this);
