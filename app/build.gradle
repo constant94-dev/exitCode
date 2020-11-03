@@ -3,14 +3,6 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 
 android {
-    signingConfigs {
-        release {
-            keyAlias 'releasekey'
-            keyPassword 'sjdmlgPxordms'
-            storeFile file('C:/Android_Avd_Gradle/.android/release.jks')
-            storePassword 'sjdmlgPxordms'
-        }
-    }
     compileSdkVersion 29
     buildToolsVersion "30.0.1"
 
@@ -26,7 +18,6 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
         }
     }
     compileOptions {
