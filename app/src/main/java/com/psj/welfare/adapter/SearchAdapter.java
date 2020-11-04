@@ -30,7 +30,6 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
 		this.onClickListener = OnClickListener;
 	}
 
-
 	public class ViewHolder extends RecyclerView.ViewHolder {
 
 		public TextView search_title;
@@ -45,10 +44,8 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
 			itemView.setClickable(true);
 			itemView.setEnabled(true);
 			itemView.setOnClickListener(onClickListener);
-
 		}
 	}
-
 
 	@NonNull
 	@Override

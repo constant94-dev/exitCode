@@ -18,16 +18,11 @@
             android:name="com.kakao.sdk.AppKey"
             android:value="@string/kakao_app_key" />
 
-        <activity android:name=".activity.MYLoginActivity"/>
-        <activity android:name=".activity.ProfileActivity"/>
         <activity android:name=".activity.MainTabLayoutActivity">
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->
 <!--                <category android:name="android.intent.category.LAUNCHER" />-->
 <!--            </intent-filter>-->
-        </activity>
-        <activity android:name=".activity.MainActivity">
-
         </activity>
         <activity android:name=".activity.FirstCategory"/>
         <activity android:name=".activity.SecondCategory"/>
@@ -41,12 +36,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.DetailBenefitActivity"></activity>
-        <activity android:name=".activity.SearchActivity"></activity>
-        <activity android:name=".activity.MainBeforeActivity">
-
-        </activity>
-        <activity android:name=".activity.SettingActivity"></activity>
-        <activity android:name=".activity.FavorActivity"></activity>
 
         <service
             android:name=".api.MyFirebaseMessagingService"

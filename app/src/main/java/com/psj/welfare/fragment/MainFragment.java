@@ -3,19 +3,13 @@ package com.psj.welfare.fragment;
 import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.Signature;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.ViewPager;
 
-import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,19 +20,12 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.psj.welfare.R;
-import com.psj.welfare.activity.MainActivity;
 import com.psj.welfare.activity.ResultBenefitActivity;
-import com.psj.welfare.activity.SearchActivity;
-import com.psj.welfare.adapter.MainTextVPAdapter;
 import com.psj.welfare.custom.CustomResultBenefitDialog;
 import com.psj.welfare.custom.OnSingleClickListener;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
-import java.util.Timer;
 
 /**
  * MainActivity를 대체하는 프래그먼트
