@@ -178,7 +178,7 @@ public class FirstCategory extends AppCompatActivity {
 			@Override
 			public void onClick(View v) {
 				Log.i(TAG, "< 이미지 클릭!");
-				Intent f_CategoryIntent = new Intent(FirstCategory.this, MainBeforeActivity.class);
+				Intent f_CategoryIntent = new Intent(FirstCategory.this, MainTabLayoutActivity.class);
 				startActivity(f_CategoryIntent);
 				finish();
 			}

@@ -114,7 +114,7 @@ public class ResultBenefitActivity extends AppCompatActivity
                     Log.i(TAG, "관심사 버튼을 클릭 했어요 -> " + position);
                     int btnColor = ((RBFAdapter) RbfBtn_Adapter).getRBF(position).getRBF_btnColor();
                     Log.e(TAG, "내가 선택한 버튼 색상 : " + btnColor);
-                    Log.e(TAG, "비교할 버튼 새상 : " + R.drawable.btn_welfare);
+                    Log.e(TAG, "비교할 버튼 새상 : " + R.drawable.btn_done);
 
                     if (btnColor != R.drawable.rbf_btn_after)
                     {

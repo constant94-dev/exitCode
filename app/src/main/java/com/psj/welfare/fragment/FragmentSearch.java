@@ -15,11 +15,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.psj.welfare.Data.FirstCategoryItem;
 import com.psj.welfare.Data.SearchItem;
 import com.psj.welfare.R;
 import com.psj.welfare.activity.DetailBenefitActivity;
-import com.psj.welfare.activity.SearchActivity;
 import com.psj.welfare.adapter.SearchAdapter;
 import com.psj.welfare.api.ApiService;
 import com.psj.welfare.api.RetroClient;
@@ -28,7 +26,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.regex.Pattern;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -49,7 +46,6 @@ public class FragmentSearch extends Fragment {
 
 	public FragmentSearch() {
 		Log.e(TAG, "생성자 실행!");
-
 	}
 
 	@Override
